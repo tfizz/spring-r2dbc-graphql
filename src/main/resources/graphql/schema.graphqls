@@ -1,0 +1,21 @@
+type Post{
+    id: ID!
+    title: String
+    body: String
+}
+
+type Query{
+    getPosts: [Post]!
+    getPost(id: ID!): Post
+}
+
+type Mutation {
+    createPost(createPostInput: PostInput!): Post
+    updatePost(id: ID!, updatePostInput: PostInput!): Post
+    deletePost(id: ID!): Post
+}
+
+input PostInput {
+    title: String!
+    body: String!
+}
